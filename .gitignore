@@ -1,0 +1,66 @@
+# ─── Root ─────────────────────────────
+/node_modules
+/.next
+/out
+/build
+/.vercel
+.DS_Store
+.vscode/
+*.pem
+*.log
+
+# ─── Dependencies (Yarn / PNPM) ───────
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnpm-debug.log*
+
+# ─── Frontend ────────────────────────
+frontend/node_modules
+frontend/.next
+frontend/.turbo
+frontend/dist
+frontend/.eslintcache
+frontend/coverage
+
+# ─── Backend (Go) ─────────────────────
+backend/bin
+backend/coverage
+backend/*.test
+backend/tmp
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Code coverage profiles and other test artifacts
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# ─── Env Files ────────────────────────
+.env
+.env.*
+**/.env
+**/.env.*
+
+# ─── TypeScript ───────────────────────
+*.tsbuildinfo
+next-env.d.ts
