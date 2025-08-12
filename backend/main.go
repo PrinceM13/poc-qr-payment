@@ -41,7 +41,7 @@ func handleCreatePayment(c *gin.Context) {
 
 	resp := map[string]string{
 		"paymentID": paymentID,
-		"qrURL":     fmt.Sprintf("https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=%s", paymentID),
+		"qrURL":     fmt.Sprintf("https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://localhost/pay/%s", paymentID),
 	}
 	c.JSON(http.StatusOK, resp)
 }
