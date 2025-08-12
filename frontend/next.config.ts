@@ -1,8 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-    async rewrites() {
+  async rewrites() {
     return process.env.NODE_ENV === 'development'
       ? [
           {
@@ -10,8 +9,18 @@ const nextConfig: NextConfig = {
             destination: 'http://localhost:8080/:path*', // Gin backend
           },
         ]
-      : [];
+      : []
   },
-};
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.qrserver.com',
+        port: '',
+        pathname: '/v1/create-qr-code/**',
+      },
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
