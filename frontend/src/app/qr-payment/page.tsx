@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-export default function HomePage() {
+export default function QrPaymentPage() {
   const [paymentID, setPaymentID] = useState('')
   const [qrURL, setQrURL] = useState('')
   const [status, setStatus] = useState('waiting')
@@ -28,21 +28,11 @@ export default function HomePage() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>One Page QR Payment Demo</h1>
+      <h1>QR Payment Demo</h1>
       {qrURL && <Image src={qrURL} alt="QR Code" width={200} height={200} />}
       <p>Payment ID: {paymentID}</p>
       <p>Status: {status}</p>
       {status === 'success' && <div style={{ color: 'green', fontWeight: 'bold' }}>✅ Payment Success!</div>}
-      <br />
-      <button
-        className="rounded bg-blue-500 px-4 py-2 text-white"
-        onClick={async () => {
-          await fetch(`/api/simulate-payment/${paymentID}`, { method: 'POST' })
-        }}
-        disabled={!paymentID}
-      >
-        Simulate Payment
-      </button>
     </div>
   )
 }
